@@ -1,9 +1,7 @@
 <?php
-// data variables
-$blinds = $fan = $outdoorLight = $text = "";
+    // data variables
+    $blinds = $fan = $outdoorLight = $text = "";
 
-// ak sa formular odošle tak sa skontroluju data
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $blinds = $_POST["blinds"];
     $fan = $_POST["fan"];
     $outdoorLight = $_POST["outdoorLight"];
@@ -16,7 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     fwrite($writeData, $text);
 
     fclose($writeData);
-}
 ?>
 
 <html lang="en">
