@@ -2,9 +2,9 @@
     // data variables
     $blinds = $fan = $outdoorLight = $text = "";
 
-    $blinds = $_POST["blinds"];
-    $fan = $_POST["fan"];
-    $outdoorLight = $_POST["outdoorLight"];
+    if (isset($_POST["blinds"])) $blinds = $_POST["blinds"];
+    if (isset($_POST["fan"])) $fan = $_POST["fan"];
+    if (isset($_POST["outdoorLight"])) $outdoorLight = $_POST["outdoorLight"];
 
     $text = "blinds: " .  "\r\n";
     $text .= "fan: " . $fan . "\r\n";
@@ -33,9 +33,9 @@
 <header>
     <h1>KGBSmartHome Ovládacie centrum</h1>
     <span>
-        <ul>
-            <li><a href="index.html"><img src="images/sk_flag.png" id="sk" class="lang"></a></li>
-            <li><a href="lang/indexEN.html"><img src="images/en_flag.png" id="en" class="lang"></a></li>
+        <ul class="languages">
+            <li><a href="index.php"><img src="images/sk_flag.png" id="sk" class="lang"></a></li>
+            <li><a href="lang/indexEN.php"><img src="images/en_flag.png" id="en" class="lang"></a></li>
         </ul>
     </span>
 </header>
@@ -48,18 +48,18 @@
                 <label for="blinds">Žalúzie</label>
                 <p id="blindsIndicator" class="indicator blindsIndicator">&#9679;</p>
                 <div class="slider">
-                    <input id="slider" name="blinds" type="range" min="0" max="100" value="0" oninput="changeRangeIndicatorColor()">
+                    <input id="slider" name="blinds" type="range" min="0" max="100" value="0" oninput="changeRangeIndicatorColor()"/>
                 </div>
 
                 <br><br>
                 <label for="fan">Ventilátor</label>
                 <p class="indicator fanIndicator">&#9679;</p>
-                <input type="button" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="Zmeniť">
+                <input type="button" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="Zmeniť"/>
 
                 <br><br>
                 <label for="outdoorLight">Vonkajšie svetlo</label>
                 <p class="indicator outdoorLightIndicator">&#9679;</p>
-                <input type="button" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="Zmeniť">
+                <input type="button" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="Zmeniť"/>
             </form>
         </section>
     </center>
