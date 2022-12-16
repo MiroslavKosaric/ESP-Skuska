@@ -1,3 +1,1 @@
-# IoTKrasna
-
-PHP Web Form
+# KGB SmartHome Control Centre
