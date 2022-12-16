@@ -2,9 +2,9 @@
     // data variables
     $blinds = $fan = $outdoorLight = $text = "";
 
-    $blinds = $_POST["blinds"];
-    $fan = $_POST["fan"];
-    $outdoorLight = $_POST["outdoorLight"];
+    if (isset($_POST["blinds"])) $blinds = $_POST["blinds"];
+    if (isset($_POST["fan"])) $fan = $_POST["fan"];
+    if (isset($_POST["outdoorLight"])) $outdoorLight = $_POST["outdoorLight"];
 
     $text = "blinds: " .  "\r\n";
     $text .= "fan: " . $fan . "\r\n";
