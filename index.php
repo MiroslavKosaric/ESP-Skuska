@@ -4,7 +4,6 @@
 
     // reading data
     $readText = file_get_contents("data.txt");
-    //$readTextArray = array("blinds"=>"", "fan"=>"", "outdoorLight"=>"");
     $readTextArray = explode(" ", $readText);
 
     foreach($readTextArray as $line) {
@@ -26,7 +25,7 @@
         if ($outdoorLight = "off") $outdoorLight = "on";
         if ($outdoorLight = "on") $outdoorLight = "off";
     }
-    
+
     $writeText = "blinds: " . $blinds . "\r\n";
     $writeText .= "fan: " . $fan . "\r\n";
     $writeText .= "outdoorLight: " . $outdoorLight;
