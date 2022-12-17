@@ -26,14 +26,10 @@
         if ($outdoorLight = "off") $outdoorLight = "on";
         if ($outdoorLight = "on") $outdoorLight = "off";
     }
-
-    $writeText = "blinds: " . "50" . "\r\n";
-    $writeText .= "fan: " . "off" . "\r\n";
-    $writeText .= "outdoorLight: " . "on";
-
-    //    $writeText = "blinds: " . $blinds . "\r\n";
-    //    $writeText .= "fan: " . $fan . "\r\n";
-    //    $writeText .= "outdoorLight: " . $outdoorLight;
+    
+    $writeText = "blinds: " . $blinds . "\r\n";
+    $writeText .= "fan: " . $fan . "\r\n";
+    $writeText .= "outdoorLight: " . $outdoorLight;
 
     $writeData = fopen("data.txt", "w") or die("Unable to open file!");
     fwrite($writeData, $writeText);
