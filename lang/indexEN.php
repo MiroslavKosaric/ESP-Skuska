@@ -10,22 +10,31 @@
         $line = trim($line, "\n");
     }
 
+    $blinds = $readTextArray[1];
     $fan = $readTextArray[3];
     $outdoorLight = $readTextArray[5];
 
     // writing data
-    if (isset($_POST['blinds'])) $blinds = $_POST["blinds"];
+    if (isset($_POST['blinds'])) {
+        $blinds = $_POST["blinds"];
+    } else {
+        $blinds = $readTextArray[1];
+    }
 
     if (isset($_POST['fan'])) {
         if ($fan == "off") $fan = "on";
         if ($fan == "on") $fan = "off";
+    } else {
+        $fan = $readTextArray[3];
     }
 
     if (isset($_POST['outdoorLight'])) {
         if ($outdoorLight = "off") $outdoorLight = "on";
         if ($outdoorLight = "on") $outdoorLight = "off";
+    } else {
+        $outdoorLight = $readTextArray[5];
     }
-    
+
     $writeText = "blinds: " . $blinds . "\r\n";
     $writeText .= "fan: " . $fan . "\r\n";
     $writeText .= "outdoorLight: " . $outdoorLight;
