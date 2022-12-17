@@ -1,7 +1,20 @@
 <?php
     // data variables
-    $blinds = $fan = $outdoorLight = $text = "";
+    $blinds = $fan = $outdoorLight = $readText = $writeText = "";
 
+    // reading data
+    $readText = file_get_contents("data.txt");
+    //$readTextArray = array("blinds"=>"", "fan"=>"", "outdoorLight"=>"");
+    $readTextArray = explode(" ", $readText);
+
+    foreach($readTextArray as $line) {
+        $line = trim($line, "\n");
+    }
+
+    $fan = $readTextArray[3];
+    $outdoorLight = $readTextArray[5];
+
+    // writing data
     if (isset($_POST['blinds'])) $blinds = $_POST["blinds"];
 
     if (isset($_POST['fan'])) {
@@ -14,13 +27,16 @@
         if ($outdoorLight = "on") $outdoorLight = "off";
     }
 
+    $writeText = "blinds: " . "50" . "\r\n";
+    $writeText .= "fan: " . "off" . "\r\n";
+    $writeText .= "outdoorLight: " . "on";
 
-    $text = "blinds: " . $blinds . "\r\n";
-    $text .= "fan: " . $fan . "\r\n";
-    $text .= "outdoorLight: " . $outdoorLight;
+    //    $writeText = "blinds: " . $blinds . "\r\n";
+    //    $writeText .= "fan: " . $fan . "\r\n";
+    //    $writeText .= "outdoorLight: " . $outdoorLight;
 
     $writeData = fopen("data.txt", "w") or die("Unable to open file!");
-    fwrite($writeData, $text);
+    fwrite($writeData, $writeText);
 
     fclose($writeData);
 ?>
