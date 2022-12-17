@@ -35,7 +35,7 @@
         $outdoorLight = $readTextArray[5];
     }
 
-    if ($_POST['blinds'] || $_POST['fan'] || $_POST['outdoorLight']) {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $writeText = "blinds: " . $blinds . "\r\n";
         $writeText .= "fan: " . $fan . "\r\n";
         $writeText .= "outdoorLight: " . $outdoorLight;
