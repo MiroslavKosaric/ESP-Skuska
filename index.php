@@ -15,27 +15,27 @@
     $outdoorLight = $readTextArray[5];
 
     // writing data
-    if (isset($_POST['blinds'])) {
+    if ($_POST['blinds']) {
         $blinds = $_POST["blinds"];
     } else {
         $blinds = $readTextArray[1];
     }
 
-    if (isset($_POST['fan'])) {
+    if ($_POST['fan']) {
         if ($fan == "off") $fan = "on";
         if ($fan == "on") $fan = "off";
     } else {
         $fan = $readTextArray[3];
     }
 
-    if (isset($_POST['outdoorLight'])) {
+    if ($_POST['outdoorLight']) {
         if ($outdoorLight = "off") $outdoorLight = "on";
         if ($outdoorLight = "on") $outdoorLight = "off";
     } else {
         $outdoorLight = $readTextArray[5];
     }
 
-    if (isset($_POST['blinds']) || isset($_POST['fan']) || isset($_POST['outdoorLight'])) {
+    if ($_POST['blinds'] || $_POST['fan'] || $_POST['outdoorLight']) {
         $writeText = "blinds: " . $blinds . "\r\n";
         $writeText .= "fan: " . $fan . "\r\n";
         $writeText .= "outdoorLight: " . $outdoorLight;
@@ -75,22 +75,23 @@
     <center>
         <section class="controlPanelContainer">
             <h2 class="heading">Ovládací panel</h2>
-            <form class="controlPanel" action="" method="POST">
+            <input class="controlPanel" action="" method="POST">
                 <label for="blinds">Žalúzie</label>
                 <p id="blindsIndicator" class="indicator blindsIndicator">&#9679;</p>
                 <div class="slider">
-                    <input id="slider" name="blinds" type="range" min="0" max="100" value="0" oninput="changeRangeIndicatorColor()"/>
+                    <input id="slider" name="blinds" type="range" min="0" max="100" value="0" oninput="changeRangeIndicatorColor(); submit()"/>
                 </div>
 
                 <br><br>
                 <label for="fan">Ventilátor</label>
                 <p class="indicator fanIndicator">&#9679;</p>
-                <input type="submit" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="Zmeniť"/>
+                <input type="button" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator'); submit()" value="Zmeniť"/>
 
                 <br><br>
                 <label for="outdoorLight">Vonkajšie svetlo</label>
                 <p class="indicator outdoorLightIndicator">&#9679;</p>
-                <input type="submit" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="Zmeniť"/>
+                <input type="button" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator'); submit()" value="Zmeniť"/>
+                <input type="submit">Uložiť zmeny</input>
             </form>
         </section>
     </center>
