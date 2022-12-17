@@ -35,14 +35,16 @@
         $outdoorLight = $readTextArray[5];
     }
 
-    $writeText = "blinds: " . $blinds . "\r\n";
-    $writeText .= "fan: " . $fan . "\r\n";
-    $writeText .= "outdoorLight: " . $outdoorLight;
+    if (isset($_POST['blinds']) || isset($_POST['fan']) || isset($_POST['outdoorLight'])) {
+        $writeText = "blinds: " . $blinds . "\r\n";
+        $writeText .= "fan: " . $fan . "\r\n";
+        $writeText .= "outdoorLight: " . $outdoorLight;
 
-    $writeData = fopen("data.txt", "w") or die("Unable to open file!");
-    fwrite($writeData, $writeText);
+        $writeData = fopen("data.txt", "w") or die("Unable to open file!");
+        fwrite($writeData, $writeText);
 
-    fclose($writeData);
+        fclose($writeData);
+    }
 ?>
 
 <html lang="en">
