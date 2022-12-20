@@ -24,7 +24,7 @@
         else {
             $blinds = $readTextArray[1];
         }
-        
+
         if ($_POST['fan']) {
             if ($fan == "on") $fan = "off";
             if ($fan == "off") $fan = "on";
@@ -96,7 +96,9 @@
                 <label for="outdoorLight">Vonkajšie svetlo</label>
                 <p class="indicator outdoorLightIndicator">&#9679;</p>
                 <input type="button" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator'); submit()" value="Zmeniť"/>
+                <center>
                 <input type="submit">Uložiť zmeny</input>
+                </center>>
             </form>
         </section>
     </center>
