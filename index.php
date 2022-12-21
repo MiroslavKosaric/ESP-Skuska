@@ -36,16 +36,16 @@
     }
 
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $writeText = "blinds: " . $blinds . "\r\n";
-        $writeText .= "fan: " . $fan . "\r\n";
-        $writeText .= "outdoorLight: " . $outdoorLight;
+    // if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $writeText = "blinds: " . $blinds . "\r\n";
+    $writeText .= "fan: " . $fan . "\r\n";
+    $writeText .= "outdoorLight: " . $outdoorLight;
 
-        $writeData = fopen("data.txt", "w") or die("Unable to open file!");
-        fwrite($writeData, $writeText);
+    $writeData = fopen("data.txt", "w") or die("Unable to open file!");
+    fwrite($writeData, $writeText);
 
-        fclose($writeData);
-    }
+    fclose($writeData);
+    // }
 ?>
 
 <html lang="sk">
