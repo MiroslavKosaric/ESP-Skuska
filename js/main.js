@@ -1,7 +1,5 @@
 console.log("Hello, World!");
 
-// nastavit indicatorom farbu podla suboru
-
 
 function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
@@ -18,7 +16,7 @@ function setIndicatorColors() {
     if (rangeValue == 0) {
         indicator.style.color = "red";
     }
-    else if (rangeValue == 100) {
+    else if (rangeValue == 99) {
         indicator.style.color = "green";
     }
     else {
