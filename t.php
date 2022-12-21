@@ -1,6 +1,6 @@
 <?php
-    $writeText = "50" . "\r\n";
-    $writeText .= "off" . "\r\n";
+    $writeText = "70" . "\n";
+    $writeText .= "off" . "\n";
     $writeText .= "on";
 
     $writeData = fopen("data.txt", "w") or die("Unable to open file!");
