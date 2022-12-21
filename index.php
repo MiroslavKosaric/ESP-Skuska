@@ -65,8 +65,8 @@
     <header>
         <h1>KGBSmartHome Ovládacie centrum</h1>
         <div class="languages">
-            <a href="index.html"><img src="images/sk_flag.png" id="sk" class="lang"></a>
-            <a href="lang/indexEN.html"><img src="images/en_flag.png" id="en" class="lang"></a>
+            <a href="#"><img src="images/sk_flag.png" id="sk" class="lang"></a>
+            <a href="lang/indexEN.php"><img src="images/en_flag.png" id="en" class="lang"></a>
         </div>
     </header>
 
