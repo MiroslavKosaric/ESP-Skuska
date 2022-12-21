@@ -62,8 +62,22 @@
     <title>SmartHome Ovládacie centrum</title>
 </head>
 <body onload="setIndicatorColors()">
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html"><img src="images/sk_flag.png" id="sk" class="lang"></a>
+        <a href="lang/indexEN.html"><img src="images/en_flag.png" id="en" class="lang"></a>
+        <br>
+        <a href="#"><img src="images/es_flag.png" id="sk" class="lang"></a>
+        <br>
+        <a href="#"><img src="images/fr_flag.png" id="sk" class="lang"></a>
+    </div>
+    
     <header>
         <h1>KGBSmartHome Ovládacie centrum</h1>
+        
+        <span style="font-size:30px;cursor:pointer;color: white;" onclick="openNav()">&#9776; Languages</span>
+
         <div class="languages">
             <a href=""><img src="images/sk_flag.png" id="sk" class="lang"></a>
             <a href="lang/indexEN.php"><img src="images/en_flag.png" id="en" class="lang"></a>
