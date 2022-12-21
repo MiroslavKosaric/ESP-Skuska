@@ -11,11 +11,9 @@
 
 
     // writing data
-    if (isset($_POST['blinds'])) {
-        $blinds = "blinds: " . $_POST['blinds'];
-    } else {
-        $blinds = $readTextArray[0];
-    }
+    $dom = new DOMDocument('1.0', 'iso-8859-1');
+    $dom->validateOnParse = true;
+    $blinds = $dom->getElementById('slider')->value;
 
     if (isset($_POST['fan'])) {
         if ($fan == "fan: off") $fan = "fan: on";
@@ -31,17 +29,16 @@
         $outdoorLight = $readTextArray[2];
     }
 
-    // if (isset($_POST['blinds']) || isset($_POST['fan']) || isset($_POST['outdoorLight'])) {
+
     $writeText = "";
-    $writeText = $blinds . "\r\n";
-    $writeText .= $fan . "\r\n";
+    $writeText = "blinds: " . $blinds . "\n";
+    $writeText .= $fan . "\n";
     $writeText .= $outdoorLight;
 
     $writeData = fopen("data.txt", "w") or die("Unable to open file!");
     fwrite($writeData, $writeText);
 
     fclose($writeData);
-    // }
 ?>
 
 <html lang="en">
