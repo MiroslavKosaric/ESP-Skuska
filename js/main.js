@@ -3,9 +3,18 @@ console.log("Hello, World!");
 // nastavit indicatorom farbu podla suboru
 
 
+// function readFile(input) {;
+//     let reader = new FileReader();
+  
+//     reader.readAsText(file);
+  
+//     console.log(reader.result);
+// }
+
 function setIndicatorColors() {
-    var indicator = document.getElementById("blindsIndicator");
-    var rangeValue = document.getElementById("slider").value;
+    // readFile("data.txt");
+    let indicator = document.getElementById("blindsIndicator");
+    let rangeValue = document.getElementById("slider").value;
 
     if (rangeValue == 0) {
         indicator.style.color = "red";
@@ -16,11 +25,10 @@ function setIndicatorColors() {
     else {
         indicator.style.color = "orange";
     }
-};
-
+}
 
 function changeIndicatorColor(className) {
-    var indicator = document.getElementsByClassName(className);
+    let indicator = document.getElementsByClassName(className);
 
     if (indicator[0].style.color == "red") {
         indicator[0].style.color = "green";
@@ -28,11 +36,11 @@ function changeIndicatorColor(className) {
     else {
         indicator[0].style.color = "red";
     }
-};
+}
 
 function changeRangeIndicatorColor() { 
-    var indicator = document.getElementById("blindsIndicator");
-    var rangeValue = document.getElementById("slider").value;
+    let indicator = document.getElementById("blindsIndicator");
+    let rangeValue = document.getElementById("slider").value;
 
     if (rangeValue == 0) {
         indicator.style.color = "red";
@@ -43,4 +51,4 @@ function changeRangeIndicatorColor() {
     else {
         indicator.style.color = "orange";
     }
-};
+}
