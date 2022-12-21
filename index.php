@@ -23,8 +23,8 @@
         }
 
         if (isset($_POST['fan'])) {
-            if ($fan == "fan: off\n") $fan = "fan: on\n";
-            if ($fan == "fan: on\n") $fan = "fan: off\n";
+            if ($fan == "fan: off") $fan = "fan: on\n";
+            if ($fan == "fan: on") $fan = "fan: off\n";
         } else {
             $fan = $readTextArray[1];
         }
@@ -84,12 +84,12 @@
                     <br>
                     <label for="fan">Ventilátor</label>
                     <p class="indicator fanIndicator">&#9679;</p>
-                    <input type="button" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="Zmeniť"/>
+                    <input type="submit" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="Zmeniť"/>
     
                     <br><br>
                     <label for="outdoorLight">Vonkajšie svetlo</label>
                     <p class="indicator outdoorLightIndicator">&#9679;</p>
-                    <input type="button" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="Zmeniť"/>
+                    <input type="submit" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="Zmeniť"/>
                     <br><br>
                 
                     <center>
