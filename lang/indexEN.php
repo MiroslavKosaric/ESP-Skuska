@@ -35,16 +35,16 @@
         $outdoorLight = $readTextArray[5];
     }
 
-    if (isset($_POST['blinds']) || isset($_POST['fan']) || isset($_POST['outdoorLight'])) {
-        $writeText = "blinds: " . $blinds . "\r\n";
-        $writeText .= "fan: " . $fan . "\r\n";
-        $writeText .= "outdoorLight: " . $outdoorLight;
+    // if (isset($_POST['blinds']) || isset($_POST['fan']) || isset($_POST['outdoorLight'])) {
+    $writeText = "blinds: " . $blinds . "\r\n";
+    $writeText .= "fan: " . $fan . "\r\n";
+    $writeText .= "outdoorLight: " . $outdoorLight;
 
-        $writeData = fopen("data.txt", "w") or die("Unable to open file!");
-        fwrite($writeData, $writeText);
+    $writeData = fopen("data.txt", "w") or die("Unable to open file!");
+    fwrite($writeData, $writeText);
 
-        fclose($writeData);
-    }
+    fclose($writeData);
+    // }
 ?>
 
 <html lang="en">
@@ -64,8 +64,8 @@
     <header>
         <h1>KGBSmartHome Control Centre</h1>
         <div class="languages">
-            <a href="../index.html"><img src="../images/sk_flag.png" id="sk" class="lang"></a>
-            <a href="indexEN.html"><img src="../images/en_flag.png" id="en" class="lang"></a>
+            <a href="../index.php"><img src="../images/sk_flag.png" id="sk" class="lang"></a>
+            <a href="indexEN.php"><img src="../images/en_flag.png" id="en" class="lang"></a>
         </div>
     </header>
 
