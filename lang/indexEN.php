@@ -9,43 +9,39 @@
     $fan = $readTextArray[1];
     $outdoorLight = $readTextArray[2];
 
-
     // writing data
-    // $dom = new DOMDocument('1.0', 'iso-8859-1');
-    // $dom->validateOnParse = true;
-    // $blinds = $dom->getElementById('slider')->value;
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") { 
-        if (isset($_POST['blinds'])) {
-            $blinds = $_POST['blinds'];
-        } else {
-            $blinds = $readTextArray[0];
-        }
-
-        if (isset($_POST['fan'])) {
-            if ($fan == "fan: off\n") $fan = "fan: on\n";
-            if ($fan == "fan: on\n") $fan = "fan: off\n";
-        } else {
-            $fan = $readTextArray[1];
-        }
-
-        if (isset($_POST['outdoorLight'])) {
-            if ($outdoorLight = "outdoorLight: off") $outdoorLight = "outdoorLight: on";
-            if ($outdoorLight = "outdoorLight: on") $outdoorLight = "outdoorLight: off";
-        } else {
-            $outdoorLight = $readTextArray[2];
-        }
-
-
-        $writeText = "blinds: " . $blinds . "\n";
-        $writeText .= $fan;
-        $writeText .= $outdoorLight;
-
-        $writeData = fopen("data.txt", "w") or die("Unable to open file!");
-        fwrite($writeData, $writeText);
-
-        fclose($writeData);
+    // if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+    if (isset($_POST['blinds'])) {
+        $blinds = $_POST['blinds'];
+    } else {
+        $blinds = $readTextArray[0];
     }
+
+    if (isset($_POST['fan'])) {
+        if ($fan == "off") $fan = "on";
+        if ($fan == "on") $fan = "off";
+    } else {
+        $fan = $readTextArray[1];
+    }
+
+    if (isset($_POST['outdoorLight'])) {
+        if ($outdoorLight = "off") $outdoorLight = "on";
+        if ($outdoorLight = "on") $outdoorLight = "off";
+    } else {
+        $outdoorLight = $readTextArray[2];
+    }
+
+
+    $writeText = $blinds . "\n";
+    $writeText .= $fan . "\n";
+
+    $writeText .= $outdoorLight;
+
+    $writeData = fopen("data.txt", "w") or die("Unable to open file!");
+    fwrite($writeData, $writeText);
+
+    fclose($writeData);
+    // }
 ?>
 
 <html lang="en">
