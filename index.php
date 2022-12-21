@@ -32,6 +32,11 @@
     }
 
     // if (isset($_POST['blinds']) || isset($_POST['fan']) || isset($_POST['outdoorLight'])) {
+
+    if ($_POST['blinds']) {
+        $blinds = "blinds: ". $_POST['blinds'];
+    }
+
     $writeText = "";
     $writeText = $blinds . "\r\n";
     $writeText .= $fan . "\r\n";
