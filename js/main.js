@@ -37,7 +37,7 @@ function changeRangeIndicatorColor() {
     if (rangeValue == 0) {
         indicator.style.color = "red";
     }
-    else if (rangeValue == 100) {
+    else if (rangeValue == 99) {
         indicator.style.color = "green";
     }
     else {
