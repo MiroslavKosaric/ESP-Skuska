@@ -3,7 +3,7 @@
     $blinds = $fan = $outdoorLight = "";
 
     // reading data
-    $readTextArray = file('data.txt');
+    $readTextArray = file('data.txt', FILE_IGNORE_NEW_LINES);
 
     $blinds = $readTextArray[0];
     $fan = $readTextArray[1];
