@@ -37,8 +37,8 @@
 
 
     $writeText = "";
-    $writeText = "blinds: " . $blinds;
-    $writeText .= $fan;
+    $writeText = "blinds: " . $blinds . "\n";
+    $writeText .= $fan . "\n";
     $writeText .= $outdoorLight;
 
     $writeData = fopen("data.txt", "w") or die("Unable to open file!");
@@ -84,7 +84,6 @@
                     <label for="fan">Fan</label>
                     <p class="indicator fanIndicator">&#9679;</p>
                     <input type="button" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="Toggle">
-                    <!-- <span class="required">* <?php echo $numError;?></span> -->
 
                     <br><br>
                     <label for="outdoorLight">Outdoor light</label>
