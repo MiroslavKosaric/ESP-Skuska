@@ -23,9 +23,9 @@
 
             if (in_array($chosen, $answers)) {
                 if(strcasecmp($chosen, 'on') == 0) {
-                    $fan = "on";
+                    $fan = "1";
                 } else {
-                    $fan = "off";
+                    $fan = "0";
                 }
             }
         } 
@@ -38,9 +38,9 @@
 
             if (in_array($chosen, $answers)) {
                 if(strcasecmp($chosen, 'on') == 0) {
-                    $outdoorLight = "on";
+                    $outdoorLight = "1";
                 } else {
-                    $outdoorLight = "off";
+                    $outdoorLight = "0";
                 }
             }
         } 
