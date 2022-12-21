@@ -112,7 +112,7 @@ input[type="button"]:active, input[type="submit"]:active {
 
 input[type="radio"] {
     display: inline;
-    scale: 150%;
+    scale: 135%;
     margin-left: 1rem;
 }
 
