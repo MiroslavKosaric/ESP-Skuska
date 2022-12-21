@@ -15,9 +15,9 @@
             $blinds = $_POST['blinds'];
         }
 
-        if (empty($_POST['fan'])) {
+        if (isset($_POST['fan'])) {
             $fan = $readTextArray[1];
-        } else {
+
             $answers = array('on', 'off');
             $chosen = $_POST['fan'];
 
@@ -30,9 +30,9 @@
             }
         } 
 
-        if (empty($_POST['outdoorLight'])) {
+        if (isset($_POST['outdoorLight'])) {
             $fan = $readTextArray[2];
-        } else {
+            
             $answers = array('on', 'off');
             $chosen = $_POST['outdoorLight'];
 
