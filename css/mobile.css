@@ -9,17 +9,19 @@ body {
 
 header {
     display: block;
-    height: 5%;
+    height: 4%;
     background-color: black;
     padding: 1.25rem;
     padding-bottom: 3rem
 }
 
 header h1 {
+    display: inline;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 20;
     color: white;
     margin: 0%;
+    margin-right: 3rem;
 }
 
 footer {
@@ -68,14 +70,6 @@ footer {
     align-items: center;
     box-shadow: 0px 15px 20px #7E6D5766;
 }
-/* 
-.slider p {
-    font-size: 26px;
-    font-weight: 600;
-    font-family: Open Sans;
-    padding-left: 30px;
-    color: black;
-} */
 
 .slider input[type="range"] {
     appearance: none !important;
@@ -110,25 +104,31 @@ input[type="button"] {
     box-shadow: 0px 15px 20px #7E6D5766;
 }
 
-input[type="button"]:active {
+input[type="button"]:active, input[type="submit"]:active {
     scale: 90%;
+}
+
+input[type="submit"] {
+    width: auto;
+    height: 2.5rem;
+    border-style: solid;
+    border-color: white;
+    border-radius: 12px;
+    box-shadow: 0px 15px 20px #7E6D5766;
 }
 
 .languages {
     display: block;
     float: right;
-    margin-right: 1rem; 
     margin-top: -1.75rem;
 }
 
 .lang {
-    /* display: inline; */
     width: 32px;  
-    /* padding-left: 2%; */
 }
 
 #en {
-    /* display: block; */
+    display: block;
     margin-left: 1px;
     width: 30px;
 }
