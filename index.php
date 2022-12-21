@@ -3,12 +3,12 @@
     $blinds = $fan = $outdoorLight = $readText = $writeText = "";
 
     // reading data
-    $readText = file_get_contents("data.txt");
-    $readTextArray = explode(" ", $readText);
+    // $readText = file_get_contents("data.txt");
+    // $readTextArray = explode(" ", $readText);
 
-    foreach($readTextArray as $line) {
-        $line = trim($line, "\n");
-    }
+
+    $readTextArray = file('data.txt');
+
 
     $blinds = $readTextArray[1];
     $fan = $readTextArray[3];
@@ -16,7 +16,7 @@
 
     // writing data
     if (isset($_POST['blinds'])) {
-        $blinds = $_POST["blinds"];
+        $blinds = $_POST['blinds'];
     } else {
         $blinds = $readTextArray[1];
     }
@@ -37,6 +37,7 @@
 
 
     // if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $writeText = "";
     $writeText = "blinds: " . $blinds . "\r\n";
     $writeText .= "fan: " . $fan . "\r\n";
     $writeText .= "outdoorLight: " . $outdoorLight;
@@ -65,7 +66,7 @@
     <header>
         <h1>KGBSmartHome Ovládacie centrum</h1>
         <div class="languages">
-            <a href="#"><img src="images/sk_flag.png" id="sk" class="lang"></a>
+            <a href=""><img src="images/sk_flag.png" id="sk" class="lang"></a>
             <a href="lang/indexEN.php"><img src="images/en_flag.png" id="en" class="lang"></a>
         </div>
     </header>
@@ -84,12 +85,12 @@
                     <br>
                     <label for="fan">Ventilátor</label>
                     <p class="indicator fanIndicator">&#9679;</p>
-                    <input type="button" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="Zmeniť"/>
+                    <input type="submit" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="Zmeniť"/>
     
                     <br><br>
                     <label for="outdoorLight">Vonkajšie svetlo</label>
                     <p class="indicator outdoorLightIndicator">&#9679;</p>
-                    <input type="button" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="Zmeniť"/>
+                    <input type="submit" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="Zmeniť"/>
                     <br><br>
                 </form>
                 <center>
