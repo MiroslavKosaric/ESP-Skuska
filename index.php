@@ -37,8 +37,8 @@
 
 
     $writeText = "";
-    $writeText = "blinds: " . $blinds;
-    $writeText .= $fan;
+    $writeText = "blinds: " . $blinds . "\n";
+    $writeText .= $fan . "\n";
     $writeText .= $outdoorLight;
 
     $writeData = fopen("data.txt", "w") or die("Unable to open file!");
