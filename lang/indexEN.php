@@ -6,9 +6,10 @@
     $readText = file_get_contents("data.txt");
     $readTextArray = explode(" ", $readText);
 
-    foreach($readTextArray as $line) {
-        $line = trim($line, "\n");
-    }
+
+    // foreach($readTextArray as $line) {
+    //     $line = trim($line, "\n");
+    // }
 
     $blinds = $readTextArray[1];
     $fan = $readTextArray[3];
