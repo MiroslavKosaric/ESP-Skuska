@@ -14,7 +14,6 @@
     $dom->getElementById('slider')->value = $blinds;
 
 
-
     // writing data
     // $dom = new DOMDocument('1.0', 'iso-8859-1');
     // $dom->validateOnParse = true;
@@ -28,21 +27,21 @@
         }
 
         if (isset($_POST['fan'])) {
-            if ($fan == "fan: off") $fan = "fan: on\n";
-            if ($fan == "fan: on") $fan = "fan: off\n";
+            if ($fan == "off") $fan = "on\n";
+            if ($fan == "on") $fan = "off\n";
         } else {
             $fan = $readTextArray[1];
         }
 
         if (isset($_POST['outdoorLight'])) {
-            if ($outdoorLight = "outdoorLight: off") $outdoorLight = "outdoorLight: on";
-            if ($outdoorLight = "outdoorLight: on") $outdoorLight = "outdoorLight: off";
+            if ($outdoorLight = "off") $outdoorLight = "on";
+            if ($outdoorLight = "on") $outdoorLight = "off";
         } else {
             $outdoorLight = $readTextArray[2];
         }
 
 
-        $writeText = "blinds: " . $blinds . "\n";
+        $writeText = $blinds . "\n";
         $writeText .= $fan;
         $writeText .= $outdoorLight;
 

@@ -1,7 +1,7 @@
 <?php
-    $writeText = "blinds: " . "50" . "\r\n";
-    $writeText .= "fan: " . "off" . "\r\n";
-    $writeText .= "outdoorLight: " . "on";
+    $writeText = "50" . "\r\n";
+    $writeText .= "off" . "\r\n";
+    $writeText .= "on";
 
     $writeData = fopen("data.txt", "w") or die("Unable to open file!");
     fwrite($writeData, $writeText);
