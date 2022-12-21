@@ -15,22 +15,56 @@
             $blinds = $_POST['blinds'];
         }
 
-        if (isset($_POST['fan'])) {
-            if ($fan == "off") $fan = "on";
-            if ($fan == "on") $fan = "off";
-        }
+        if (empty($_POST['fan'])) {
+            $fan = $readTextArray[1];
+        } else {
+            $answers = array('on', 'off');
+            $chosen = $_POST['fan'];
 
-        if (isset($_POST['outdoorLight'])) {
-            if ($outdoorLight = "off") $outdoorLight = "on";
-            if ($outdoorLight = "on") $outdoorLight = "off";
-        }
+            if (in_array($chosen, $answers)) {
+                if(strcasecmp($chosen, 'on') == 0) {
+                    $fan = "on";
+                } else {
+                    $fan = "off";
+                }
+            }
+        } 
 
-    $writeText = $blinds . "\n" . $fan . "\n" . $outdoorLight;
+        if (empty($_POST['outdoorLight'])) {
+            $fan = $readTextArray[2];
+        } else {
+            $answers = array('on', 'off');
+            $chosen = $_POST['outdoorLight'];
 
-    $writeData = fopen("data.txt", "w") or die("Unable to open file!");
-    fwrite($writeData, $writeText);
+            if (in_array($chosen, $answers)) {
+                if(strcasecmp($chosen, 'on') == 0) {
+                    $outdoorLight = "on";
+                } else {
+                    $outdoorLight = "off";
+                }
+            }
+        } 
+        
+        // if (isset($_POST['blinds'])) {
+        //     $blinds = $_POST['blinds'];
+        // }
 
-    fclose($writeData);
+        // if (isset($_POST['fan'])) {
+        //     if ($fan == "off") $fan = "on";
+        //     if ($fan == "on") $fan = "off";
+        // }
+
+        // if (isset($_POST['outdoorLight'])) {
+        //     if ($outdoorLight = "off") $outdoorLight = "on";
+        //     if ($outdoorLight = "on") $outdoorLight = "off";
+        // }
+
+        $writeText = $blinds . "\n" . $fan . "\n" . $outdoorLight;
+
+        $writeData = fopen("data.txt", "w") or die("Unable to open file!");
+        fwrite($writeData, $writeText);
+
+        fclose($writeData);
     }
 
     $readTextArray = "";
@@ -76,12 +110,14 @@
                     <br>
                     <label for="fan">Ventilátor</label>
                     <p class="indicator fanIndicator">&#9679;</p>
-                    <input type="submit" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="Zmeniť"/>
+                    <input type="radio" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="Zap"/>
+                    <input type="radio" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="Vyp"/>
     
                     <br><br>
                     <label for="outdoorLight">Vonkajšie svetlo</label>
                     <p class="indicator outdoorLightIndicator">&#9679;</p>
-                    <input type="submit" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="Zmeniť"/>
+                    <input type="submit" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="Zap"/>
+                    <input type="submit" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="Vyp"/>
                     <br><br>
                 
                     <center>
