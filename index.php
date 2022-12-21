@@ -23,8 +23,8 @@
         }
 
         if (isset($_POST['fan'])) {
-            if ($fan == "fan: off") $fan = "fan: on";
-            if ($fan == "fan: on") $fan = "fan: off";
+            if ($fan == "fan: off\n") $fan = "fan: on\n";
+            if ($fan == "fan: on\n") $fan = "fan: off\n";
         } else {
             $fan = $readTextArray[1];
         }
@@ -37,9 +37,8 @@
         }
 
 
-        $writeText = "";
         $writeText = "blinds: " . $blinds . "\n";
-        $writeText .= $fan . "\n";
+        $writeText .= $fan;
         $writeText .= $outdoorLight;
 
         $writeData = fopen("data.txt", "w") or die("Unable to open file!");
