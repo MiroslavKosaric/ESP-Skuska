@@ -31,10 +31,9 @@
         $outdoorLight = $readTextArray[2];
     }
 
-    echo "<script>
-        let rangeValue = document.getElementById("slider").value;
-        $blinds = rangeValue;
-    </script>";
+    $dom = new DOMDocument('1.0', 'iso-8859-1');
+    $dom->validateOnParse = true;
+    $blinds = $dom->getElementById('slider')->value;
 
     $writeText = "";
     $writeText = "blinds: " . $blinds . "</br>";
