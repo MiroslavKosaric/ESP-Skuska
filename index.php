@@ -32,10 +32,7 @@
     }
 
 
-    $writeText = $blinds . "\n";
-    $writeText .= $fan . "\n";
-
-    $writeText .= $outdoorLight;
+    $writeText = $blinds . "\n" . $fan . "\n" . $outdoorLight;
 
     $writeData = fopen("data.txt", "w") or die("Unable to open file!");
     fwrite($writeData, $writeText);
