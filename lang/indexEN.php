@@ -32,10 +32,7 @@
     }
 
 
-    $writeText = $blinds . "\n";
-    $writeText .= $fan . "\n";
-
-    $writeText .= $outdoorLight;
+    $writeText = $blinds . "\n" . $fan . "\n" . $outdoorLight;
 
     $writeData = fopen("data.txt", "w") or die("Unable to open file!");
     fwrite($writeData, $writeText);
@@ -74,22 +71,35 @@
                     <label for="blinds">Blinds</label>
                     <p id="blindsIndicator" class="indicator blindsIndicator">&#9679;</p>
                     <div class="slider">
-                        <input id="slider" name="blinds" type="range" min="0" max="100" value="50" oninput="changeRangeIndicatorColor()">
+                        <input id="slider" name="blinds" type="range" min="0" max="100" value="0" oninput="changeRangeIndicatorColor()"/>
                     </div>
-
+    
                     <br>
                     <label for="fan">Fan</label>
                     <p class="indicator fanIndicator">&#9679;</p>
-                    <input type="button" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="Toggle">
+                    
+                    <div class="radioAnswers">
+                        <input type="radio" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator', 'green')" value="on"/>
+                        <p class="radioLabel">On</p>
+                        <input type="radio" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator', 'red')" value="off"/>
+                        <p class="radioLabel">Off</p>
+                    </div>
 
                     <br><br>
                     <label for="outdoorLight">Outdoor light</label>
                     <p class="indicator outdoorLightIndicator">&#9679;</p>
-                    <input type="button" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="Toggle"> 
-                    <br><br>
+                    
+                    <div class="radioAnswers">
+                        <input type="radio" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator', 'green')" value="on"/>
+                        <p class="radioLabel">On</p>
+                        <input type="radio" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator', 'red')" value="off"/>
+                        <p class="radioLabel">Off</p>
+                    </div>
 
+                    <br><br>
+                
                     <center>
-                    <input type="submit" value="Uložiť zmeny"/>
+                    <input type="submit" value="Save changes"/>
                     </center>
                 </form>
             </section>
