@@ -3,8 +3,10 @@
     $blinds = $fan = $outdoorLight = $readText = $writeText = "";
 
     // reading data
-    $readText = file_get_contents("data.txt");
-    $readTextArray = explode(" ", $readText);
+    // $readText = file_get_contents("data.txt");
+    // $readTextArray = explode(" ", $readText);
+
+    $readTextArray = file('data.txt');
 
 
     // foreach($readTextArray as $line) {
@@ -15,9 +17,9 @@
     $fan = $readTextArray[3];
     $outdoorLight = $readTextArray[5];
 
-    print $blinds . "\r\n";
-    print $fan . "\r\n";
-    print $outdoorLight . "\r\n";
+    echo $blinds . "\r\n";
+    echo $fan . "\r\n";
+    echo $outdoorLight . "\r\n";
 
     // writing data
     if (isset($_POST['blinds'])) {
