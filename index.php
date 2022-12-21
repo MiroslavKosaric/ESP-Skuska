@@ -9,11 +9,6 @@
     $fan = $readTextArray[1];
     $outdoorLight = $readTextArray[2];
 
-    $dom = new DOMDocument('1.0', 'iso-8859-1');
-    $dom->validateOnParse = true;
-    $dom->getElementById('slider')->value = $blinds;
-
-
     // writing data
     // $dom = new DOMDocument('1.0', 'iso-8859-1');
     // $dom->validateOnParse = true;
@@ -83,7 +78,7 @@
                     <label for="blinds">Žalúzie</label>
                     <p id="blindsIndicator" class="indicator blindsIndicator">&#9679;</p>
                     <div class="slider">
-                        <input id="slider" name="blinds" type="range" min="0" max="100" value="80" oninput="changeRangeIndicatorColor()"/>
+                        <input id="slider" name="blinds" type="range" min="0" max="100" value="<?php $blinds;?>" oninput="changeRangeIndicatorColor()"/>
                     </div>
     
                     <br>
