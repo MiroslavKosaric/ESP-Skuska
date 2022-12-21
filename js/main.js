@@ -3,16 +3,15 @@ console.log("Hello, World!");
 // nastavit indicatorom farbu podla suboru
 
 
-// function readFile(input) {;
-//     let reader = new FileReader();
-  
-//     reader.readAsText(file);
-  
-//     console.log(reader.result);
-// }
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
 
 function setIndicatorColors() {
-    // readFile("data.txt");
     let indicator = document.getElementById("blindsIndicator");
     let rangeValue = document.getElementById("slider").value;
 
@@ -27,15 +26,10 @@ function setIndicatorColors() {
     }
 }
 
-function changeIndicatorColor(className) {
+function changeIndicatorColor(className, color) {
     let indicator = document.getElementsByClassName(className);
 
-    if (indicator[0].style.color == "red") {
-        indicator[0].style.color = "green";
-    }
-    else {
-        indicator[0].style.color = "red";
-    }
+    indicator[0].style.color = color;
 }
 
 function changeRangeIndicatorColor() { 
