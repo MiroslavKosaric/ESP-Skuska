@@ -9,6 +9,11 @@
     $fan = $readTextArray[1];
     $outdoorLight = $readTextArray[2];
 
+    $dom = new DOMDocument('1.0', 'iso-8859-1');
+    $dom->validateOnParse = true;
+    $dom->getElementById('slider')->value = $blinds;
+
+
 
     // writing data
     // $dom = new DOMDocument('1.0', 'iso-8859-1');
@@ -62,26 +67,13 @@
     <title>SmartHome Ovládacie centrum</title>
 </head>
 <body onload="setIndicatorColors()">
-
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <a href="index.php"><img src="images/sk_flag.png" id="sk" class="lang"></a>
-        <a href="lang/indexEN.php"><img src="images/en_flag.png" id="en" class="lang"></a>
-        <br>
-        <a href="#"><img src="images/es_flag.png" id="es" class="lang"></a>
-        <br>
-        <a href="#"><img src="images/fr_flag.png" id="fr" class="lang"></a>
-    </div>
-
     <header>
         <h1>KGBSmartHome Ovládacie centrum</h1>
-        
-        <span style="font-size:30px;cursor:pointer;color: white;" onclick="openNav()">&#9776; Languages</span>
 
-        <!-- <div class="languages">
+        <div class="languages">
             <a href=""><img src="images/sk_flag.png" id="sk" class="lang"></a>
             <a href="lang/indexEN.php"><img src="images/en_flag.png" id="en" class="lang"></a>
-        </div> -->
+        </div>
     </header>
 
     <main>
@@ -92,7 +84,7 @@
                     <label for="blinds">Žalúzie</label>
                     <p id="blindsIndicator" class="indicator blindsIndicator">&#9679;</p>
                     <div class="slider">
-                        <input id="slider" name="blinds" type="range" min="0" max="100" value="0" oninput="changeRangeIndicatorColor()"/>
+                        <input id="slider" name="blinds" type="range" min="0" max="100" value="80" oninput="changeRangeIndicatorColor()"/>
                     </div>
     
                     <br>
