@@ -31,22 +31,20 @@
         $outdoorLight = $readTextArray[2];
     }
 
-    // if (isset($_POST['blinds']) || isset($_POST['fan']) || isset($_POST['outdoorLight'])) {
-
-    if ($_POST['blinds']) {
-        $blinds = "blinds: ". $_POST['blinds'];
-    }
+    echo "<script>
+        let rangeValue = document.getElementById("slider").value;
+        $blinds = rangeValue;
+    </script>";
 
     $writeText = "";
-    $writeText = $blinds . "\r\n";
-    $writeText .= $fan . "\r\n";
+    $writeText = "blinds: " . $blinds . "</br>";
+    $writeText .= $fan . "</br>";
     $writeText .= $outdoorLight;
 
     $writeData = fopen("data.txt", "w") or die("Unable to open file!");
     fwrite($writeData, $writeText);
 
     fclose($writeData);
-    // }
 ?>
 
 <html lang="sk">
