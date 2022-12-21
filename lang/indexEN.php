@@ -86,7 +86,7 @@
                     <label for="blinds">Blinds</label>
                     <p id="blindsIndicator" class="indicator blindsIndicator">&#9679;</p>
                     <div class="slider">
-                        <input id="slider" name="blinds" type="range" min="0" max="100" value="0" oninput="changeRangeIndicatorColor()"/>
+                        <input id="slider" name="blinds" type="range" min="0" max="99" value="0" oninput="changeRangeIndicatorColor()"/>
                     </div>
     
                     <br>
