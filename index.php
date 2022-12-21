@@ -87,9 +87,6 @@
                     <label for="blinds">Žalúzie</label>
                     <p id="blindsIndicator" class="indicator blindsIndicator">&#9679;</p>
                     <div class="slider">
-                        <!-- <script type="text/javascript">
-                            let rangeValue = document.getElementById("slider").value = $blinds;
-                        </script> -->
                         <input id="slider" name="blinds" type="range" min="0" max="100" value="0" oninput="changeRangeIndicatorColor()"/>
                     </div>
     
