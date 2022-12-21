@@ -10,10 +10,6 @@
     $outdoorLight = $readTextArray[2];
 
     // writing data
-    // $dom = new DOMDocument('1.0', 'iso-8859-1');
-    // $dom->validateOnParse = true;
-    // $blinds = $dom->getElementById('slider')->value;
-
     // if ($_SERVER["REQUEST_METHOD"] == "POST") { 
     if (isset($_POST['blinds'])) {
         $blinds = $_POST['blinds'];
@@ -79,6 +75,9 @@
                     <label for="blinds">Žalúzie</label>
                     <p id="blindsIndicator" class="indicator blindsIndicator">&#9679;</p>
                     <div class="slider">
+                        <script type="text/javascript">
+                            let rangeValue = document.getElementById("slider").value = $blinds;
+                        </script>
                         <input id="slider" name="blinds" type="range" min="0" max="100" value="<?php $blinds;?>" oninput="changeRangeIndicatorColor()"/>
                     </div>
     
