@@ -44,20 +44,6 @@
                 }
             }
         } 
-        
-        // if (isset($_POST['blinds'])) {
-        //     $blinds = $_POST['blinds'];
-        // }
-
-        // if (isset($_POST['fan'])) {
-        //     if ($fan == "off") $fan = "on";
-        //     if ($fan == "on") $fan = "off";
-        // }
-
-        // if (isset($_POST['outdoorLight'])) {
-        //     if ($outdoorLight = "off") $outdoorLight = "on";
-        //     if ($outdoorLight = "on") $outdoorLight = "off";
-        // }
 
         $writeText = $blinds . "\n" . $fan . "\n" . $outdoorLight;
 
@@ -112,9 +98,9 @@
                     <p class="indicator fanIndicator">&#9679;</p>
                     
                     <div class="radioAnswers">
-                        <input type="radio" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="on"/>
+                        <input type="radio" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator', 'green')" value="on"/>
                         <p class="radioLabel">Zap</p>
-                        <input type="radio" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="off"/>
+                        <input type="radio" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator', 'red')" value="off"/>
                         <p class="radioLabel">Vyp</p>
                     </div>
 
@@ -123,9 +109,9 @@
                     <p class="indicator outdoorLightIndicator">&#9679;</p>
                     
                     <div class="radioAnswers">
-                        <input type="radio" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="on"/>
+                        <input type="radio" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator', 'green')" value="on"/>
                         <p class="radioLabel">Zap</p>
-                        <input type="radio" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="off"/>
+                        <input type="radio" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator', 'red')" value="off"/>
                         <p class="radioLabel">Vyp</p>
                     </div>
 
