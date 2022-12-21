@@ -1,46 +1,41 @@
 <?php
     // data variables
-    $blinds = $fan = $outdoorLight = $readText = $writeText = "";
+    $blinds = $fan = $outdoorLight = "";
 
     // reading data
-    // $readText = file_get_contents("data.txt");
-    // $readTextArray = explode(" ", $readText);
-
-
     $readTextArray = file('data.txt');
 
+    $blinds = $readTextArray[0];
+    $fan = $readTextArray[1];
+    $outdoorLight = $readTextArray[2];
 
-    $blinds = $readTextArray[1];
-    $fan = $readTextArray[3];
-    $outdoorLight = $readTextArray[5];
 
     // writing data
     if (isset($_POST['blinds'])) {
-        $blinds = $_POST['blinds'];
+        $blinds = "blinds: " . $_POST['blinds'];
     } else {
-        $blinds = $readTextArray[1];
+        $blinds = $readTextArray[0];
     }
 
     if (isset($_POST['fan'])) {
-        if ($fan == "off") $fan = "on";
-        if ($fan == "on") $fan = "off";
+        if ($fan == "fan: off") $fan = "fan: on";
+        if ($fan == "fan: on") $fan = "fan: off";
     } else {
-        $fan = $readTextArray[3];
+        $fan = $readTextArray[1];
     }
 
     if (isset($_POST['outdoorLight'])) {
-        if ($outdoorLight = "off") $outdoorLight = "on";
-        if ($outdoorLight = "on") $outdoorLight = "off";
+        if ($outdoorLight = "outdoorLight: off") $outdoorLight = "outdoorLight: on";
+        if ($outdoorLight = "outdoorLight: on") $outdoorLight = "outdoorLight: off";
     } else {
-        $outdoorLight = $readTextArray[5];
+        $outdoorLight = $readTextArray[2];
     }
 
-
-    // if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // if (isset($_POST['blinds']) || isset($_POST['fan']) || isset($_POST['outdoorLight'])) {
     $writeText = "";
-    $writeText = "blinds: " . $blinds . "\r\n";
-    $writeText .= "fan: " . $fan . "\r\n";
-    $writeText .= "outdoorLight: " . $outdoorLight;
+    $writeText = $blinds . "\r\n";
+    $writeText .= $fan . "\r\n";
+    $writeText .= $outdoorLight;
 
     $writeData = fopen("data.txt", "w") or die("Unable to open file!");
     fwrite($writeData, $writeText);
