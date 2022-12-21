@@ -75,12 +75,12 @@
                     <br>
                     <label for="fan">Ventilátor</label>
                     <p class="indicator fanIndicator">&#9679;</p>
-                    <input type="button" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="Zmeniť"/>
+                    <input type="submit" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="Zmeniť"/>
     
                     <br><br>
                     <label for="outdoorLight">Vonkajšie svetlo</label>
                     <p class="indicator outdoorLightIndicator">&#9679;</p>
-                    <input type="button" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="Zmeniť"/>
+                    <input type="submit" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="Zmeniť"/>
                     <br><br>
                 
                     <center>
