@@ -11,25 +11,16 @@
 
     // writing data
     if ($_SERVER["REQUEST_METHOD"] == "POST") { 
-        if (empty($_POST['blinds'])) {
-            $blinds = $readTextArray[0];
-        } 
-        else {
+        if (isset($_POST['blinds'])) {
             $blinds = $_POST['blinds'];
         }
 
-        if (empty($_POST['fan'])) {
-            $fan = $readTextArray[1];
-        } 
-        else {
+        if (isset($_POST['fan'])) {
             if ($fan == "off") $fan = "on";
             if ($fan == "on") $fan = "off";
         }
 
-        if (empty($_POST['outdoorLight'])) {
-            $outdoorLight = $readTextArray[2];
-        }
-        else {
+        if (isset($_POST['outdoorLight'])) {
             if ($outdoorLight = "off") $outdoorLight = "on";
             if ($outdoorLight = "on") $outdoorLight = "off";
         }
