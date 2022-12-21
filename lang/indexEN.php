@@ -6,6 +6,10 @@
     $readText = file_get_contents("data.txt");
     $readTextArray = explode(" ", $readText);
 
+    foreach ($readTextArray as $key => $line) {
+        print "$key: $line</br>";
+    }
+
     foreach($readTextArray as $line) {
         $line = trim($line, "\n");
     }
@@ -16,7 +20,7 @@
 
     // writing data
     if (isset($_POST['blinds'])) {
-        $blinds = $_POST["blinds"];
+        $blinds = $_POST['blinds'];
     } else {
         $blinds = $readTextArray[1];
     }
@@ -65,7 +69,7 @@
         <h1>KGBSmartHome Control Centre</h1>
         <div class="languages">
             <a href="../index.php"><img src="../images/sk_flag.png" id="sk" class="lang"></a>
-            <a href="#"><img src="../images/en_flag.png" id="en" class="lang"></a>
+            <a href=""><img src="../images/en_flag.png" id="en" class="lang"></a>
         </div>
     </header>
 
