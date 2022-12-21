@@ -14,33 +14,29 @@
     $fan = $readTextArray[3];
     $outdoorLight = $readTextArray[5];
 
+    // writing data
+    if (isset($_POST['blinds'])) {
+        $blinds = $_POST["blinds"];
+    } else {
+        $blinds = $readTextArray[1];
+    }
+
+    if (isset($_POST['fan'])) {
+        if ($fan == "off") $fan = "on";
+        if ($fan == "on") $fan = "off";
+    } else {
+        $fan = $readTextArray[3];
+    }
+
+    if (isset($_POST['outdoorLight'])) {
+        if ($outdoorLight = "off") $outdoorLight = "on";
+        if ($outdoorLight = "on") $outdoorLight = "off";
+    } else {
+        $outdoorLight = $readTextArray[5];
+    }
+
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        // writing data
-
-        if ($_POST['blinds']) {
-            $blinds = $_POST["blinds"];
-        }
-        else {
-            $blinds = $readTextArray[1];
-        }
-
-        if ($_POST['fan']) {
-            if ($fan == "on") $fan = "off";
-            if ($fan == "off") $fan = "on";
-        }
-        else {
-            $fan = $readTextArray[3];
-        }
-
-        if ($_POST['outdoorLight']) {
-            if ($outdoorLight = "off") $outdoorLight = "on";
-            if ($outdoorLight = "on") $outdoorLight = "off";
-        }
-        else {
-            $outdoorLight = $readTextArray[5];
-        }
-
         $writeText = "blinds: " . $blinds . "\r\n";
         $writeText .= "fan: " . $fan . "\r\n";
         $writeText .= "outdoorLight: " . $outdoorLight;
@@ -62,53 +58,52 @@
     <link rel="stylesheet" type="text/css" media='screen and (max-width: 600px)' href="css/mobile.css">
     <link rel="stylesheet" type="text/css" media='screen and (min-width: 601px)' href="css/style.css">
     <script type="text/javascript" src="js/main.js"></script>
-
+    
     <title>SmartHome Ovládacie centrum</title>
 </head>
 <body onload="setIndicatorColors()">
-<header>
-    <h1>KGBSmartHome Ovládacie centrum</h1>
-    <span>
-        <ul class="languages">
-            <li><a href="index.php"><img src="images/sk_flag.png" id="sk" class="lang"></a></li>
-            <li><a href="lang/indexEN.php"><img src="images/en_flag.png" id="en" class="lang"></a></li>
-        </ul>
-    </span>
-</header>
+    <header>
+        <h1>KGBSmartHome Ovládacie centrum</h1>
+        <div class="languages">
+            <a href="index.html"><img src="images/sk_flag.png" id="sk" class="lang"></a>
+            <a href="lang/indexEN.html"><img src="images/en_flag.png" id="en" class="lang"></a>
+        </div>
+    </header>
 
-<main>
-    <center>
-        <section class="controlPanelContainer">
-            <h2 class="heading">Ovládací panel</h2>
-            <input class="controlPanel" action="" method="POST">
-                <label for="blinds">Žalúzie</label>
-                <p id="blindsIndicator" class="indicator blindsIndicator">&#9679;</p>
-                <div class="slider">
-                    <input id="slider" name="blinds" type="range" min="0" max="100" value="0" oninput="changeRangeIndicatorColor(); submit()"/>
-                </div>
-
-                <br><br>
-                <label for="fan">Ventilátor</label>
-                <p class="indicator fanIndicator">&#9679;</p>
-                <input type="button" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator'); submit()" value="Zmeniť"/>
-
-                <br><br>
-                <label for="outdoorLight">Vonkajšie svetlo</label>
-                <p class="indicator outdoorLightIndicator">&#9679;</p>
-                <input type="button" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator'); submit()" value="Zmeniť"/>
+    <main>
+        <center>
+            <section class="controlPanelContainer">
+                <h2 class="heading">Ovládací panel</h2>
+                <form class="controlPanel" action="" method="POST">
+                    <label for="blinds">Žalúzie</label>
+                    <p id="blindsIndicator" class="indicator blindsIndicator">&#9679;</p>
+                    <div class="slider">
+                        <input id="slider" name="blinds" type="range" min="0" max="100" value="0" oninput="changeRangeIndicatorColor()"/>
+                    </div>
+    
+                    <br>
+                    <label for="fan">Ventilátor</label>
+                    <p class="indicator fanIndicator">&#9679;</p>
+                    <input type="button" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="Zmeniť"/>
+    
+                    <br><br>
+                    <label for="outdoorLight">Vonkajšie svetlo</label>
+                    <p class="indicator outdoorLightIndicator">&#9679;</p>
+                    <input type="button" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="Zmeniť"/>
+                    <br><br>
+                </form>
                 <center>
-                <input type="submit">Uložiť zmeny</input>
-                </center>>
-            </form>
-        </section>
-    </center>
-</main>
+                <input type="submit" value="Uložiť zmeny"/>
+                </center>
+            </section>
+        </center>
+    </main>
 
-<footer>
-    <center>
-        <p>S ❤️ vytvorila spoločnosť KGB.</p>
-        <p>&#169;2022</p>
-    </center>
-</footer>
+    <footer>
+        <center>
+            <p>S ❤️ vytvorila spoločnosť KGB.</p>
+            <p>&#169;2022</p>
+        </center>
+    </footer>
 </body>
 </html>
