@@ -116,8 +116,8 @@
                     <br><br>
                     <label for="outdoorLight">Vonkajšie svetlo</label>
                     <p class="indicator outdoorLightIndicator">&#9679;</p>
-                    <input type="submit" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="Zap"/>
-                    <input type="submit" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="Vyp"/>
+                    <input type="button" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="on"/>
+                    <input type="button" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="off"/>
                     <br><br>
                 
                     <center>
