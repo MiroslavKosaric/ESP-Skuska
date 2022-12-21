@@ -17,7 +17,9 @@
     $fan = $readTextArray[3];
     $outdoorLight = $readTextArray[5];
 
-    print $readTextArray;
+    print $readTextArray[1] . "\n";
+    print $readTextArray[3] . "\n";
+    print $readTextArray[5] . "\n";
 
     // writing data
     if (isset($_POST['blinds'])) {
