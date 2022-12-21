@@ -10,27 +10,30 @@
     $outdoorLight = $readTextArray[2];
 
     // writing data
-    // if ($_SERVER["REQUEST_METHOD"] == "POST") { 
-    if (isset($_POST['blinds'])) {
-        $blinds = $_POST['blinds'];
-    } else {
-        $blinds = $readTextArray[0];
-    }
+    if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+        if (empty($_POST['blinds'])) {
+            $blinds = $readTextArray[0];
+        } 
+        else {
+            $blinds = $_POST['blinds'];
+        }
 
-    if (isset($_POST['fan'])) {
-        if ($fan == "off") $fan = "on";
-        if ($fan == "on") $fan = "off";
-    } else {
-        $fan = $readTextArray[1];
-    }
+        if (empty($_POST['fan'])) {
+            $fan = $readTextArray[1];
+        } 
+        else {
+            if ($fan == "off") $fan = "on";
+            if ($fan == "on") $fan = "off";
+        }
 
-    if (isset($_POST['outdoorLight'])) {
-        if ($outdoorLight = "off") $outdoorLight = "on";
-        if ($outdoorLight = "on") $outdoorLight = "off";
-    } else {
-        $outdoorLight = $readTextArray[2];
+        if (empty($_POST['outdoorLight'])) {
+            $outdoorLight = $readTextArray[2];
+        }
+        else {
+            if ($outdoorLight = "off") $outdoorLight = "on";
+            if ($outdoorLight = "on") $outdoorLight = "off";
+        }
     }
-
 
     $writeText = $blinds . "\n" . $fan . "\n" . $outdoorLight;
 
