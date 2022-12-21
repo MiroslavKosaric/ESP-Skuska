@@ -110,14 +110,25 @@
                     <br>
                     <label for="fan">Ventilátor</label>
                     <p class="indicator fanIndicator">&#9679;</p>
-                    <input type="radio" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="Zap"/>
-                    <input type="radio" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="Vyp"/>
-    
+                    
+                    <div class="radioAnswers">
+                        <input type="radio" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="on"/>
+                        <p class="radioLabel">Zap</p>
+                        <input type="radio" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="off"/>
+                        <p class="radioLabel">Vyp</p>
+                    </div>
+
                     <br><br>
                     <label for="outdoorLight">Vonkajšie svetlo</label>
                     <p class="indicator outdoorLightIndicator">&#9679;</p>
-                    <input type="button" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="on"/>
-                    <input type="button" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="off"/>
+                    
+                    <div class="radioAnswers">
+                        <input type="radio" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="on"/>
+                        <p class="radioLabel">Zap</p>
+                        <input type="radio" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="off"/>
+                        <p class="radioLabel">Vyp</p>
+                    </div>
+
                     <br><br>
                 
                     <center>
