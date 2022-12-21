@@ -6,10 +6,6 @@
     $readText = file_get_contents("data.txt");
     $readTextArray = explode(" ", $readText);
 
-    foreach ($readTextArray as $key => $line) {
-        print "$key: $line</br>";
-    }
-
     foreach($readTextArray as $line) {
         $line = trim($line, "\n");
     }
@@ -17,6 +13,10 @@
     $blinds = $readTextArray[1];
     $fan = $readTextArray[3];
     $outdoorLight = $readTextArray[5];
+
+    print "$blinds</br>";
+    print "$fan</br>";
+    print "$outdoorLight</br>";
 
     // writing data
     if (isset($_POST['blinds'])) {
