@@ -3,7 +3,7 @@
     $blinds = $fan = $outdoorLight = "";
 
     // reading data
-    $readTextArray = file('data.txt', FILE_IGNORE_NEW_LINES);
+    $readTextArray = file('../data.txt', FILE_IGNORE_NEW_LINES);
 
     $blinds = $readTextArray[0];
     $fan = $readTextArray[1];
@@ -47,7 +47,7 @@
 
         $writeText = $blinds . "\n" . $fan . "\n" . $outdoorLight;
 
-        $writeData = fopen("data.txt", "w") or die("Unable to open file!");
+        $writeData = fopen("../data.txt", "w") or die("Unable to open file!");
         fwrite($writeData, $writeText);
 
         fclose($writeData);
