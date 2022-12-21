@@ -25,8 +25,9 @@ header h1 {
 }
 
 footer {
-    position: absolute;
-    bottom: 0px;
+    display: block;
+    /* position: fixed; */
+    /* bottom: 0px; */
     width: 100%;
     height: 6%;
     color: white;
@@ -35,7 +36,7 @@ footer {
 
 .controlPanelContainer {
     width: 80%;
-    margin-top: 15%;
+    margin-top: 5%;
     margin-bottom: 15%;
 }
 
@@ -108,6 +109,11 @@ input[type="button"]:active, input[type="submit"]:active {
     scale: 90%;
 }
 
+input[type="radio"] {
+    display: inline;
+    scale: 120%;
+}
+
 input[type="submit"] {
     width: auto;
     height: 2.5rem;
@@ -115,6 +121,14 @@ input[type="submit"] {
     border-color: white;
     border-radius: 12px;
     box-shadow: 0px 15px 20px #7E6D5766;
+}
+
+.radioAnswers {
+    margin-top: 1rem;
+}
+
+.radioLabel {
+    display: inline;
 }
 
 .languages {
