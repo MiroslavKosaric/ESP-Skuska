@@ -24,7 +24,6 @@
             if ($outdoorLight = "off") $outdoorLight = "on";
             if ($outdoorLight = "on") $outdoorLight = "off";
         }
-    }
 
     $writeText = $blinds . "\n" . $fan . "\n" . $outdoorLight;
 
@@ -32,7 +31,9 @@
     fwrite($writeData, $writeText);
 
     fclose($writeData);
-    // }
+    }
+
+    $readTextArray = "";
 ?>
 
 <html lang="sk">
