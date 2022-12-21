@@ -65,7 +65,7 @@
         <h1>KGBSmartHome Control Centre</h1>
         <div class="languages">
             <a href="../index.php"><img src="../images/sk_flag.png" id="sk" class="lang"></a>
-            <a href="indexEN.php"><img src="../images/en_flag.png" id="en" class="lang"></a>
+            <a href="#"><img src="../images/en_flag.png" id="en" class="lang"></a>
         </div>
     </header>
 
