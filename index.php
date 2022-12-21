@@ -11,9 +11,15 @@
 
 
     // writing data
-    $dom = new DOMDocument('1.0', 'iso-8859-1');
-    $dom->validateOnParse = true;
-    $blinds = $dom->getElementById('slider')->value;
+    // $dom = new DOMDocument('1.0', 'iso-8859-1');
+    // $dom->validateOnParse = true;
+    // $blinds = $dom->getElementById('slider')->value;
+
+    if (isset($_POST['blinds'])) {
+        $blinds = $_POST['blinds'];
+    } else {
+        $blinds = $readTextArray[0];
+    }
 
     if (isset($_POST['fan'])) {
         if ($fan == "fan: off") $fan = "fan: on";
@@ -31,8 +37,8 @@
 
 
     $writeText = "";
-    $writeText = "blinds: " . $blinds . "\n";
-    $writeText .= $fan . "\n";
+    $writeText = "blinds: " . $blinds;
+    $writeText .= $fan;
     $writeText .= $outdoorLight;
 
     $writeData = fopen("data.txt", "w") or die("Unable to open file!");
@@ -77,17 +83,18 @@
                     <br>
                     <label for="fan">Ventilátor</label>
                     <p class="indicator fanIndicator">&#9679;</p>
-                    <input type="submit" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="Zmeniť"/>
+                    <input type="button" name="fan" class="toggleFan" onclick="changeIndicatorColor('fanIndicator')" value="Zmeniť"/>
     
                     <br><br>
                     <label for="outdoorLight">Vonkajšie svetlo</label>
                     <p class="indicator outdoorLightIndicator">&#9679;</p>
-                    <input type="submit" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="Zmeniť"/>
+                    <input type="button" name="outdoorLight" class="toggleOutdoorLight" onclick="changeIndicatorColor('outdoorLightIndicator')" value="Zmeniť"/>
                     <br><br>
+                
+                    <center>
+                    <input type="submit" value="Uložiť zmeny"/>
+                    </center>
                 </form>
-                <center>
-                <input type="submit" value="Uložiť zmeny"/>
-                </center>
             </section>
         </center>
     </main>
